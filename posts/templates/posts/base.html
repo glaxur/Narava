@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+ <meta charset="utf-8">
+ <title>{% block title %}Simply Nature{% endblock %}</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/styles/styles.css">
+</head>
+<body>
+ <header>
+<!--{# <ul class="row pages">#}-->
+<!--{#     <li class="col"><img src="../static/chat/images/new.png" class="glax"></li>#}-->
+<!--{#     <li class="col"><a href="{% url 'users:signup' %}">login</a></li>#}-->
+<!--{# </ul>#}-->
+    <div class="container">
+     <div class="hi">
+       {% if user.is_authenticated %}
+           <!--<img src="/static/chat/images/glaxur.png" class="glax">-->
+            <ul class="row pages">
+                <li class="col"><a href="{% url 'users:logout' %}">logout</a></li>
+            </ul>
+           Hi {{ user.username }}!
+
+
+       {% else %}
+           <img src="" class="">
+           <ul class="row pages">
+               <li class="col"><a href="{% url 'users:login' %}">login</a></li>
+               <li class="col"><a href="{% url 'users:signup' %}">signup</a></li>
+           </ul>
+            You're not signed in!
+       {% endif %}
+     <!--<h2 class="welcome">Welcome to the chat!</h2>-->
+     </div>
+    </div>
+ </header>
+ <main>
+ <div class="content">
+   {% block content %}
+   {% endblock %}
+ </div>
+ </main>

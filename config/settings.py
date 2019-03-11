@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'api',
     'frontend',
-    'natureposts',
+    'posts',
     'accounts'
 ]
 

@@ -14,6 +14,7 @@ django = "*"
 gunicorn = "*"
 whitenoise = "*"
 djangorestframework = "*"
+psycopg2 = "*"
 
 [requires]
 python_version = "3.7"
