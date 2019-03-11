@@ -4,40 +4,41 @@
 <head>
  <meta charset="utf-8">
  <title>{% block title %}Simply Nature{% endblock %}</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-    <link rel="stylesheet" href="/static/styles/styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="/posts/static/styles/styles.css">
 </head>
 <body>
  <header>
-<!--{# <ul class="row pages">#}-->
-<!--{#     <li class="col"><img src="../static/chat/images/new.png" class="glax"></li>#}-->
-<!--{#     <li class="col"><a href="{% url 'users:signup' %}">login</a></li>#}-->
-<!--{# </ul>#}-->
-    <div class="container">
+     <div class="container">
      <div class="hi">
        {% if user.is_authenticated %}
-           <!--<img src="/static/chat/images/glaxur.png" class="glax">-->
             <ul class="row pages">
                 <li class="col"><a href="{% url 'users:logout' %}">logout</a></li>
             </ul>
            Hi {{ user.username }}!
 
-
-       {% else %}
+         {% else %}
            <img src="" class="">
            <ul class="row pages">
                <li class="col"><a href="{% url 'users:login' %}">login</a></li>
                <li class="col"><a href="{% url 'users:signup' %}">signup</a></li>
            </ul>
-            You're not signed in!
        {% endif %}
-     <!--<h2 class="welcome">Welcome to the chat!</h2>-->
      </div>
     </div>
  </header>
  <main>
- <div class="content">
+ <div class="col-sm-3">
+     <ul>
+         <li><a href="#">Create Post</a></li>
+         <li><a href="yourposts.html">Your Posts</a></li>
+         <li><a href="allposts.html">All Posts</a></li>
+     </ul>
+ </div>
+ <div class="col-sm-9">
    {% block content %}
    {% endblock %}
  </div>
+
  </main>
+</body>
