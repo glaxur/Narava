@@ -28,7 +28,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     'localhost',
-    'simplynature.herokuapp.com'
+    'narava.herokuapp.com'
 ]
 
 
