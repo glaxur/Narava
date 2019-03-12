@@ -1,6 +1,7 @@
-from GPSPhoto import gpsphoto
+import gpsphoto
 
-data = gpsphoto.getGPSData('/api/deadend.jpg')
+data = gpsphoto.getGPSData('9ewtl0g6TBKsiRQMhyrLJQ_thumb_73e.jpg')
 
+print(data.keys())
 for tag in data.keys():
-    print("{}:{}" % (tag, data[tag]))
+    print("{}:{}" .format(tag, data[tag]))

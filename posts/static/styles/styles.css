@@ -2,6 +2,22 @@ li{
     list-style: none;
 }
 
-.col-sm-9{
-    border: #282c34 solid 2px;
+.col-sm-10{
+    /*border: #282c34 solid 2px;*/
+    margin-left: 20%;
+    height: 100%;
+    max-width: 60%;
+}
+
+
+.mainfooter{
+    background-color: #282c34;
+}
+
+.contentdiv{
+    background-color: #e0e0e0;
+}
+
+a{
+    color: #24A2B6;
 }

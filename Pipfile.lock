@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "e89eaee18a1265f98a59890337d57279f67143a637aced0d032513c4e0c2ffda"
+            "sha256": "a1431d663c4781f127c7b18852de2632b6af1a1ae84daebbafd220dfe6df4061"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -39,13 +39,6 @@
             ],
             "index": "pypi",
             "version": "==2.1.2"
-        },
-        "gpsphoto": {
-            "hashes": [
-                "sha256:7bd6478e48cea35129cfa8246dbf8a62eb9b49b684ee1bca687df633e4fd920e"
-            ],
-            "index": "pypi",
-            "version": "==2.2.2"
         },
         "gunicorn": {
             "hashes": [
