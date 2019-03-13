@@ -1,3 +1,5 @@
 from django.contrib import admin
+from frontend.models import NatureLocation
 
-# Register your models here.
+
+admin.site.register(NatureLocation)

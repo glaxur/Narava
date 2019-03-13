@@ -1,0 +1,19 @@
+#formBasicCaption{
+    width: 75%;
+    margin-left: 12%;
+}
+
+#wholeForm{
+    background-color: #e0e0e0;
+    width: 75%;
+    margin-left: 12%;
+    height: 100vh;
+}
+
+#chooseFile{
+    margin-left: 13%;
+}
+
+#wholeImageCaption{
+    padding-top: 10px;
+}
