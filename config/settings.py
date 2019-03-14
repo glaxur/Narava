@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 """
 
 import os
+import dj_database_url
 from os.path import dirname, abspath, basename, normpath, join
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -82,15 +83,20 @@ WSGI_APPLICATION = 'config.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
+if os.environ.get('DATABASE_URL'):
+    DATABASES = {
+      'default': dj_database_url.config(default=os.environ['DATABASE_URL']),
+    }
+else:
 
-DATABASES = {
-    'default': {
-            'ENGINE': 'django.db.backends.postgresql',
-            'NAME': 'finalproject',
-            'USER': 'finalproject',
-            'PASSWORD': '',
-            'HOST': '127.0.0.1',
-            'PORT': '5432',
+    DATABASES = {
+        'default': {
+                'ENGINE': 'django.db.backends.postgresql',
+                'NAME': 'finalproject',
+                'USER': 'finalproject',
+                'PASSWORD': '',
+                'HOST': '127.0.0.1',
+                'PORT': '5432',
     }
 }
 
