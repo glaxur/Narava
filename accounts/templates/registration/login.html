@@ -1,4 +1,4 @@
-{% extends 'posts/base.html' %}
+{% extends '../registration/base.html' %}
 {% load static %}
 
 {% block title %}Login to post!{% endblock %}
@@ -7,7 +7,7 @@
      <h2>Login</h2>
      <form method="post">
        {% csrf_token %}
-         <input type="hidden" value="{% url 'yourposts' %}" name='next'>
+         <input type="hidden" value="{% url 'frontend:index' %}" name='next'>
        {{ form.as_p }}
        <button class="btn logininb btn-outline-info my-2 my-sm-0" type="submit">Login</button>
      </form>

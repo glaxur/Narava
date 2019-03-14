@@ -11,8 +11,8 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 """
 
 import os
-import dj_database_url
-from os.path import dirname, abspath, basename, normpath, join
+# import dj_database_url
+from os.path import normpath, join
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -32,7 +32,6 @@ ALLOWED_HOSTS = [
     'narava.herokuapp.com'
 ]
 
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -46,7 +45,7 @@ INSTALLED_APPS = [
     'api',
     'frontend',
     'posts',
-    'accounts'
+    'accounts',
 ]
 
 MIDDLEWARE = [
@@ -91,14 +90,14 @@ else:
 
     DATABASES = {
         'default': {
-                'ENGINE': 'django.db.backends.postgresql',
+                'ENGINE': 'django.contrib.gis.db.backends.postgis',
                 'NAME': 'finalproject',
-                'USER': 'finalproject',
+                'USER': 'postgres',
                 'PASSWORD': '',
                 'HOST': '127.0.0.1',
                 'PORT': '5432',
+        }
     }
-}
 
 
 # Password validation
@@ -147,3 +146,5 @@ STATICFILES_FINDERS = [
 ]
 # ======== END STATIC FILE CONFIGURATION
 
+LOGIN_REDIRECT_URL = '/yourposts/'
+REACT_APP_DIR = 'frontend/static'

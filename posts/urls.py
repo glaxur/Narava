@@ -1,7 +1,14 @@
 from django.urls import path
 from . import views
-from posts.views import AccountIndex
+
+from django.contrib import admin
+from django.urls import path
+
+from .api import PostModelViewSet
 
 urlpatterns = [
-    path('', views.AccountIndex.as_view(), name="yourposts")
+    path('api/post/', PostModelViewSet.as_view({
+       'get': 'list',
+       'post': 'create',
+    }), name='post_api'),
 ]

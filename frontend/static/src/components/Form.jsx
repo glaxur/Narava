@@ -6,16 +6,25 @@ import { Form } from 'react-bootstrap';
 class ImageUpload extends Component {
   constructor(props) {
     super(props);
-    this.state = {file: '',imagePreviewUrl: '', imageCaption: ''};
+    this.state = {
+        file: '',
+        imagePreviewUrl: null,
+        imageCaption: '',
+    }
+    this._handleInput = this._handleInput(this);
+    this._handleSubmit = this._handleSubmit(this)
   }
 
   _handleSubmit(e) {
     e.preventDefault();
-    console.log('handle uploading-', this.state.file);
+    this.props.addPost({file: this.state.file, imageCaption: this.state.imageCaption})
+    console.log(this.state.file, this.state.imageCaption);
   }
 
-  _handleImageChange(e) {
+  _handleInput(e) {
     e.preventDefault();
+
+    // let obj = {}
 
     let reader = new FileReader();
     let file = e.target.files[0];
@@ -44,7 +53,7 @@ class ImageUpload extends Component {
             <div id="previewComponent">
                 <form id='chooseFile' onSubmit={(e)=>this._handleSubmit(e)}>
                     <input className="fileInput" type="file"
-                           onChange={(e)=>this._handleImageChange(e)} />
+                           onChange={(e)=>this._handleInput(e)} />
                 </form>
                 <div className="imgPreview">
                     {$imagePreview}
@@ -52,8 +61,8 @@ class ImageUpload extends Component {
             </div>
                 <Form id="wholeImageCaption">
                     <Form.Group controlId="formBasicCaption" id='formBasicCaption'>
-                        <Form.Control type="caption" placeholder="Enter caption" />
-                        <Form.Text className="text-muted"></Form.Text>
+                        <Form.Control type="caption" placeholder="Enter caption"/>
+                        <Form.Text className="text-muted" value={this.state.imageCaption}></Form.Text>
                     </Form.Group>
                 </Form>
             <div>
