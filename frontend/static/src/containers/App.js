@@ -87,7 +87,7 @@ class App extends Component {
         formData.append('upload', file);
         formData.append('caption', imageCaption)
 
-        fetch(`${process.env.REACT_APP_API_HOST}/api/post/`,{
+        fetch(`/api/post/`,{
             method: 'POST',
             body: formData
    }).then(response => response.json())
@@ -99,7 +99,7 @@ class App extends Component {
     }
 
     componentDidMount() {
-        fetch(`${process.env.REACT_APP_API_HOST}/api/post/`, {
+        fetch(`/api/post/`, {
             method: 'GET'
         }).then(response => {
             if(response.status === 200){
