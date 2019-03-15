@@ -57,6 +57,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
+    'frontend.middleware.dev_cors_middleware',
 ]
 
 ROOT_URLCONF = 'config.urls'
@@ -84,7 +85,7 @@ WSGI_APPLICATION = 'config.wsgi.application'
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 if os.environ.get('DATABASE_URL'):
     DATABASES = {
-      'default': dj_database_url.config(default=os.environ['DATABASE_URL']),
+       'default': dj_database_url.config(default=os.environ['DATABASE_URL']),
     }
 else:
 
@@ -148,3 +149,13 @@ STATICFILES_FINDERS = [
 
 LOGIN_REDIRECT_URL = '/yourposts/'
 REACT_APP_DIR = 'frontend/static'
+
+# Extra places for collectstatic to find static files.
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'frontend/static/build/static'),
+)
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'images')
+
+MEDIA_URL = '/media/'
+

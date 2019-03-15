@@ -9,6 +9,6 @@ class NatureLocation(models.Model):
     # latitude = models.FloatField()
     # longitude = models.FloatField()
     point = gis_models.PointField(null=True)
-    natureUpload = models.ImageField(upload_to='images')
+    natureUpload = models.FileField(upload_to='images')
     postCaption = models.CharField(max_length=100, default='No caption needed...')
     user = models.ForeignKey(User, null=True, on_delete=models.SET_NULL)
