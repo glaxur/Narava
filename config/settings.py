@@ -140,6 +140,9 @@ USE_L10N = True
 
 USE_TZ = True
 
+
+# GDAL_LIBRARY_PATH = ''
+
 # ======== STATIC FILE CONFIGURATION
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#static-root
 STATIC_ROOT = normpath(join(BASE_DIR, 'staticfiles'))

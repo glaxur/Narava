@@ -6,7 +6,7 @@ class NatureForm extends Component{
     constructor(props){
         super(props);
         this.state = {
-            imageCaption: 'this is the caption',
+            caption: '',
             file: '',
             preview: null
         }
@@ -32,7 +32,7 @@ class NatureForm extends Component{
     };
 
     _handleSubmit(event){
-        this.props.addPost({file: this.state.file, imageCaption: this.state.imageCaption})
+        this.props.addPost({file: this.state.file, imageCaption: this.state.caption})
     }
 
     render() {
@@ -45,7 +45,7 @@ class NatureForm extends Component{
                     <img id="imagePreview" src={this.state.preview} alt="" width='400px' height='450px'/>
                 </div>
                 <div id="theCaption">
-                    <input id="enterCaption" type="text" placeholder='Enter Caption' value={this.state.imageCaption} name='caption' onChange={this._handleInput}/>
+                    <input id="enterCaption" type="text" placeholder='Enter Caption' value={this.state.caption} name='caption' onChange={this._handleInput}/>
                     <button id="submitButton" className="btn btn-outline-info my-2 my-sm-0" onClick={this._handleSubmit} value="submit me">POST</button>
                 </div>
             </form>

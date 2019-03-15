@@ -27,7 +27,7 @@
 #imagePreview{
     color: #24a2b6;
     background-color: #343A40;
-    border: #24a2b6 solid 2px;
+    border: #24a2b6 solid 1px;
 }
 
 #uploadForm{
@@ -42,6 +42,6 @@
     width: 50%;
     margin-top: 8px;
     margin-bottom: 10px;
-    border: #24a2b6;
+    border: #24a2b6 solid 1px;
     color: #343A40;
 }
