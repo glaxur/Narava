@@ -3,8 +3,8 @@ from rest_framework.serializers import ModelSerializer
 from .models import NatureLocation
 
 
-class PostSerializer(ModelSerializer):
+class NatureLocationSerializer(ModelSerializer):
     class Meta:
         model = NatureLocation
-        fields = ('id', 'user', 'postCaption', 'natureUpload', 'point')
-        depth = 1
+        fields = ('id', 'user', 'post_caption', 'nature_upload', 'point')
+        # depth = 1

@@ -11,5 +11,3 @@ class SignUp(generic.CreateView):
     template_name = 'registration/signup.html'
 
 
-class AccountIndex(TemplateView):
-    template_name = 'base/youraccount.html'

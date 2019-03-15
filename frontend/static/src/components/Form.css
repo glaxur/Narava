@@ -1,19 +1,47 @@
-#formBasicCaption{
-    width: 75%;
-    margin-left: 12%;
-}
+/*#formBasicCaption{*/
+    /*width: 75%;*/
+    /*margin-left: 12%;*/
+/*}*/
 
-#wholeForm{
-    background-color: #e0e0e0;
-    width: 75%;
-    margin-left: 12%;
-    height: 100vh;
-}
+/*#wholeForm{*/
+    /*background-color: #e0e0e0;*/
+    /*width: 75%;*/
+    /*margin-left: 12%;*/
+    /*height: 100vh;*/
+/*}*/
 
-#chooseFile{
-    margin-left: 13%;
-}
+/*#chooseFile{*/
+    /*margin-left: 13%;*/
+/*}*/
 
-#wholeImageCaption{
+/*#wholeImageCaption{*/
+    /*padding-top: 10px;*/
+/*}*/
+
+#fileItem{
+    padding-left: px;
     padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#imagePreview{
+    color: #24a2b6;
+    background-color: #343A40;
+    border: #24a2b6 solid 2px;
+}
+
+#uploadForm{
+    background-color: lightgrey;
+}
+
+#submitButton{
+    margin-left: 10px;
+}
+
+#enterCaption{
+    width: 50%;
+    margin-top: 8px;
+    margin-bottom: 10px;
+    border: #24a2b6;
+    color: #343A40;
 }
