@@ -9,8 +9,10 @@ class YourPosts extends Component{
         console.log('caption', caption, 'memes', memes)
         return(
             <ul>
-                {caption}
-                {memes}
+                <li>
+                    {caption}
+                    {memes}
+                </li>
             </ul>
         );
     }
