@@ -35,3 +35,16 @@ li{
 a{
     color: #24A2B6;
 }
+
+.logouta{
+    padding-right: 70%;
+}
+
+.NaravaTitle{
+    color: #24a2b6;
+    padding-right: 2%;
+}
+
+#root{
+    background-image: url("background.JPG");
+}

@@ -19,9 +19,10 @@
 /*}*/
 
 #fileItem{
-    padding-left: px;
+    /*padding-left: px;*/
     padding-top: 10px;
     padding-bottom: 10px;
+    color: #24a2b6;
 }
 
 #imagePreview{
