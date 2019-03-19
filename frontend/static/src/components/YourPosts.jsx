@@ -1,19 +1,28 @@
-
 import React, { Component } from 'react';
 
 class YourPosts extends Component{
     render() {
-        let memes = this.props.memes.map(meme => <li><img key={meme.id} src={meme.upload} alt=""/></li>)
-        let caption = this.props.memes.map(meme => <li>{meme.caption}</li>)
-        var memeUpload = this.props.memes.map
-        console.log('caption', caption, 'memes', memes)
-        return(
-            <ul>
-                <li>
-                    {caption}
-                    {memes}
+
+        console.log('posts', this.props.posts)
+        let posts = this.props.posts.map(post => {
+            return (
+                <li key={post.id}>
+                    <h6>{post.user}</h6>
+                    <img src={post.nature_upload} alt="" width='500px' height='550px'/>
+                    <h4>{post.post_caption}</h4>
+                    <button className="btn btn-outline-info my-2 my-sm-0" id="editPost" onClick={}><a>Edit</a></button>
+                    <hr/>
                 </li>
-            </ul>
+            );
+        });
+
+        return(
+            <div>
+                <h1>Your Posts</h1>
+                <ul>
+                    {posts}
+                </ul>
+            </div>
         );
     }
 }

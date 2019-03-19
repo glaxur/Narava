@@ -52,7 +52,7 @@ INSTALLED_APPS = [
     'frontend',
     'posts',
     'accounts',
-    'storages',
+    # 'storages',
 ]
 
 MIDDLEWARE = [
@@ -64,7 +64,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
-    'frontend.middleware.dev_cors_middleware',
+    # 'frontend.middleware.dev_cors_middleware',
 ]
 
 ROOT_URLCONF = 'config.urls'
