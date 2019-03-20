@@ -3,53 +3,51 @@ import './Form.css';
 
 
 class EditPost extends Component{
-    constructor(props){
-        super(props);
+  constructor(props){
+    super(props);
 
-        let post = props.post;
+    let post = props.post;
 
-        this.state = {
-            caption: post.caption,
-            file: post.file,
-            preview: post.preview,
-        }
-        this._handleInput = this._handleInput.bind(this);
-        this._handleSubmit = this._handleSubmit.bind(this);
-
+    this.state = {
+      caption: post.post_caption,
+      preview: post.nature_upload,
     }
-    _handleInput(event){
-        let obj = {}
+    this.handleInput = this.handleInput.bind(this);
+    this.handleUpdate = this.handleUpdate.bind(this);
+  }
+  handleInput(event){
+    let obj = {}
 
-        obj[event.target.name] = event.target.value;
+    obj[event.target.name] = event.target.value;
 
-        this.setState(obj);
-    };
+    this.setState(obj);
+  };
 
-    _handleSubmit(event){
-        this.props.addPost({imageCaption: this.state.caption})
+  handleUpdate(event){
+        this.props.update({file: this.state.file, imageCaption: this.state.caption})
     }
 
-    _handleDelete(event){
+  handleDelete(event){
 
-    }
+  }
 
 
-    render() {
-        return(
-            <form id="uploadForm"onSubmit={e =>{e.preventDefault(); }}>
-                <h1 id="editPostText">EDIT POST</h1>
-                <hr/>
-                <div>
-                    <img id="imagePreview" src={this.state.preview} alt="" width='400px' height='450px'/>
-                </div>
-                <div id="theCaption">
-                    <input id="enterCaption" type="text" placeholder='Enter Caption' value={this.state.caption} name='caption' onChange={this._handleInput}/>
-                    <button id="submitButton" className="btn btn-outline-info my-2 my-sm-0" onClick={this._handleSubmit} value="submit me">Save</button>
-                    <button id="submitButton" className="btn btn-outline-info my-2 my-sm-0" onClick={this._handleDelete}>Delete</button>
-                </div>
-            </form>
-        );
-    }
+  render() {
+    return(
+      <form id="uploadForm"onSubmit={e =>{e.preventDefault(); }}>
+        <h1 id="editPostText">EDIT POST</h1>
+        <hr/>
+        <div>
+          <img id="imagePreview" src={this.state.preview} alt="" width='400px' height='450px'/>
+        </div>
+        <div id="theCaption">
+          <input id="enterCaption" type="text" placeholder='Enter Caption' value={this.state.caption} name='caption' onChange={this.handleInput}/>
+          <button id="submitButton" className="btn btn-outline-info my-2 my-sm-0" onClick={this.handleUpdate} value="submit me">Save</button>
+          <button id="submitButton" className="btn btn-outline-info my-2 my-sm-0" onClick={this.handleDelete}>Delete</button>
+        </div>
+      </form>
+    );
+  }
 }
 
 

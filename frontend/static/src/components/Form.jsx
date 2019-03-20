@@ -10,11 +10,10 @@ class NatureForm extends Component{
             file: '',
             preview: null
         }
-        this._handleInput = this._handleInput.bind(this);
-        this._handleSubmit = this._handleSubmit.bind(this);
-
+        this.handleInput = this.handleInput.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
-    _handleInput(event){
+    handleInput(event){
         let obj = {}
 
         if(event.target.name !== 'image'){
@@ -31,7 +30,7 @@ class NatureForm extends Component{
         this.setState(obj);
     };
 
-    _handleSubmit(event){
+    handleSubmit(event){
         this.props.addPost({file: this.state.file, imageCaption: this.state.caption})
     }
 
@@ -39,14 +38,14 @@ class NatureForm extends Component{
         return(
             <form id="uploadForm"onSubmit={e =>{e.preventDefault(); }}>
                 <div>
-                    <input id="fileItem" type="file" onChange={this._handleInput} name="image"/>
+                    <input id="fileItem" type="file" onChange={this.handleInput} name="image"/>
                 </div>
                 <div>
                     <img id="imagePreview" src={this.state.preview} alt="" width='400px' height='450px'/>
                 </div>
                 <div id="theCaption">
-                    <input id="enterCaption" type="text" placeholder='Enter Caption' value={this.state.caption} name='caption' onChange={this._handleInput}/>
-                    <button id="submitButton" className="btn btn-outline-info my-2 my-sm-0" onClick={this._handleSubmit} value="submit me">POST</button>
+                    <input id="enterCaption" type="text" placeholder='Enter Caption' value={this.state.caption} name='caption' onChange={this.handleInput}/>
+                    <button id="submitButton" className="btn btn-outline-info my-2 my-sm-0" onClick={this.handleSubmit} value="submit me">POST</button>
                 </div>
             </form>
         );
