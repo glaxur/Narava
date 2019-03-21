@@ -1,6 +1,11 @@
 import exifread
 from rest_framework.viewsets import ModelViewSet
 from rest_framework.authentication import SessionAuthentication
+from rest_framework.generics import UpdateAPIView, DestroyAPIView
+from rest_framework.response import Response
+
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+from django.views.generic.edit import UpdateView
 
 from .gpsphoto.gpsphoto import GPSPhoto
 from django.contrib.gis.geos import Point
@@ -76,3 +81,27 @@ class NatureLocationViewSet(ModelViewSet):
         pnt = Point(data['Latitude'], data['Longitude'])
 
         serializer.save(user=self.request.user, point=pnt)
+
+
+class NatureLocationUpdateView(UpdateAPIView):
+    authentication_classes = (CsrfExemptMixin, )
+    model = NatureLocation
+    queryset = NatureLocation.objects.all()
+    serializer_class = NatureLocationSerializer
+
+    def update(self, request, *args, **kwargs):
+        print(request.data)
+        instance = self.get_object()
+        instance.post_caption = request.data['newData']['post_caption']
+        instance.save()
+        return Response('caption was updated successfully!')
+
+
+class NatureLocationDeleteView(DestroyAPIView):
+    authentication_classes = (CsrfExemptMixin, )
+    model = NatureLocation
+    queryset = NatureLocation.objects.all()
+    serializer_class = NatureLocationSerializer
+
+
+
