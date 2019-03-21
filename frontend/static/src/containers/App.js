@@ -38,14 +38,15 @@ class App extends Component {
       .then(json => {
         console.log('Success', JSON.stringify(json))
         console.log(json)
+        let posts = this.state.posts
+        posts.push(json)
+        this.setState({posts: posts})
       })
       .catch(error => console.log('Error', error))
   }
 
 
   _update(dataObj) {
-    // console.log('dataObj', dataObj)
-
     let newData = {
       'post_caption': dataObj.post_caption
     }
@@ -57,21 +58,30 @@ class App extends Component {
       },
       body: JSON.stringify({newData})
     }).then(response => response.json())
-      .then(json => {
-        console.log('Put Success', JSON.stringify(json))
-        console.log(json)
-      })
-      .catch(error => console.log('Error', error))
+    .then(json => {
+      console.log('Put Success', JSON.stringify(json))
+      console.log(json)
+
+      console.log({'newData': newData})
+      // let updatedPost = this.state.posts
+      // updatedPost.map()
+      // this.setState({posts: updatedPost})
+
+    })
+    .catch(error => console.log('Error', error))
     this.setState({isEditing: false})
   }
+
 
   _delete() {
     fetch(`api/post/${this.state.isEditing.id}/delete/`, {
       method: 'DELETE',
     }).then(response => response.json())
       .then(json => {
-        console.log('Put Success', JSON.stringify(json))
+        console.log('delete Success', JSON.stringify(json))
         console.log(json)
+        // let afterDelete = this.state.posts
+        // this.setState({posts: afterDelete})
       })
       .catch(error => console.log('Error', error))
     this.setState({isEditing: false})
@@ -97,7 +107,7 @@ class App extends Component {
       <div className="App">
 
         {this.state.isEditing ? (
-          <EditPost post={this.state.isEditing} update={this._update} delete={this._delete}/>) : (
+          <EditPost post={this.state.isEditing} update={this._update} delete={this._delete} cancel={this._cancel}/>) : (
           <div>
             <NatureForm addPost={this._addPost}/>
             <hr/>

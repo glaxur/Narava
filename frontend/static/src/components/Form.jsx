@@ -12,6 +12,8 @@ class NatureForm extends Component{
         }
         this.handleInput = this.handleInput.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+
+        this.fileInput = React.createRef();
     }
     handleInput(event){
         let obj = {}
@@ -21,6 +23,7 @@ class NatureForm extends Component{
         }else{
             let file = event.target.files[0];
             obj.file = file;
+            console.log({'file': file})
 
             let fileReader = new FileReader()
             fileReader.onload = () => this.setState({preview: fileReader.result});
@@ -30,15 +33,17 @@ class NatureForm extends Component{
         this.setState(obj);
     };
 
-    handleSubmit(event){
+    handleSubmit(e){
         this.props.addPost({file: this.state.file, imageCaption: this.state.caption})
+        this.setState({caption: '', file: '', preview: null});
+        this.fileInput.current.value = '';
     }
 
     render() {
         return(
             <form id="uploadForm"onSubmit={e =>{e.preventDefault(); }}>
                 <div>
-                    <input id="fileItem" type="file" onChange={this.handleInput} name="image"/>
+                    <input ref={this.fileInput} id="fileItem" type="file" onChange={this.handleInput} name="image"/>
                 </div>
                 <div>
                     <img id="imagePreview" src={this.state.preview} alt="" width='400px' height='450px'/>

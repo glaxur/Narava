@@ -15,7 +15,7 @@ class YourPosts extends Component{
             <button className="btn btn-outline-info my-2 my-sm-0" id="editPostButton" onClick={() => this.props.edit(post)}>Edit</button>
           </div>
           <div id='map'>
-            <button className="btn btn-outline-info my-2 my-sm-0">See Location</button>
+            <button className="btn btn-outline-info my-2 my-sm-0"><a href="map/"></a>See Location</button>
           </div>
           <hr/>
         </li>

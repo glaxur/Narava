@@ -37,6 +37,7 @@ class EditPost extends Component {
 
 
 
+
   render() {
     console.log(this.props.post)
     return (
@@ -51,11 +52,14 @@ class EditPost extends Component {
         <div id="theCaption">
           <input id="enterCaption" type="text" placeholder='Enter Caption' value={this.state.caption} name='caption'
                  onChange={this.handleInput}/>
-          <button id="submitButton" className="btn btn-outline-info my-2 my-sm-0" onClick={this.handleUpdate}
-                  value="submit me">Save
+          <button
+            id="submitButton" className="btn btn-outline-info my-2 my-sm-0" onClick={this.handleUpdate}
+            value="submit me">Save
           </button>
-          <button id="submitButton" className="btn btn-outline-info my-2 my-sm-0" onClick={this.handleDelete}>Delete
+          <button
+            id="submitButton" className="btn btn-outline-info my-2 my-sm-0" onClick={this.handleDelete}>Delete
           </button>
+
         </div>
       </form>
     );
