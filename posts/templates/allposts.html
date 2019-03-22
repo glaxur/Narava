@@ -1,0 +1,14 @@
+{% extends 'registration/base.html' %}
+{% block content %}
+{% csrf_token %}
+<h1>All Posts</h1>
+    <div>
+    {% for nauture_location in object_list %}
+        <li>{{ nauture_location.user }}</li>
+        <img src="{{ nauture_location.nature_upload.url }}" width='500px' height='550px' alt="">
+        <h6>{{ nauture_location.post_caption }}</h6>
+        <a href="{% url 'map' nauture_location.pk %}" class="btn btn-outline-info my-2 my-sm-0">See Location</a>
+        {% endfor %}
+    </div>
+
+{% endblock content %}

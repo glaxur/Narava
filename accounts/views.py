@@ -12,16 +12,3 @@ class SignUp(generic.CreateView):
     template_name = 'registration/signup.html'
 
 
-class AllPostsView(TemplateView):
-    template_name = 'registration/allposts.html'
-    model = NatureLocation
-
-    # def get_queryset(self):
-    #     # super needs to be inside method I am overloading
-    #     query_set = super().get_queryset()
-    #     user_id = self.kwargs.get('pk')
-
-        # query_set = query_set.filter(id=id, )
-
-        # return query_set
-
