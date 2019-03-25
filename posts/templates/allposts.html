@@ -1,14 +1,20 @@
 {% extends 'registration/base.html' %}
 {% block content %}
 {% csrf_token %}
-<h1>All Posts</h1>
-    <div>
-    {% for nauture_location in object_list %}
-        <li>{{ nauture_location.user }}</li>
-        <img src="{{ nauture_location.nature_upload.url }}" width='500px' height='550px' alt="">
-        <h6>{{ nauture_location.post_caption }}</h6>
-        <a href="{% url 'map' nauture_location.pk %}" class="btn btn-outline-info my-2 my-sm-0">See Location</a>
+<h1 class="AP">All Posts</h1>
+    <div id="allposts">
+    {% for nature_location in object_list %}
+        <li class="allpostsuser">@{{ nature_location.user }}</li>
+        <img class="allpostsimages" src="{{ nature_location.nature_upload.url }}" width='500px' height='550px' alt="">
+        <div class="allpostscaption">
+            <h6>{{ nature_location.post_caption }}</h6>
+        </div>
+        <div class="mapbutton">
+            <a href="{% url 'map' nature_location.pk %}" class="btn btn-outline-info my-2 my-sm-0">See Location</a>
+        </div>
+        <hr/>
         {% endfor %}
     </div>
+
 
 {% endblock content %}

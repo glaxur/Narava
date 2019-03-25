@@ -7,4 +7,4 @@ class NatureLocationSerializer(ModelSerializer):
     class Meta:
         model = NatureLocation
         fields = ('id', 'user', 'post_caption', 'nature_upload', 'point')
-        # depth = 1
+        depth = 1

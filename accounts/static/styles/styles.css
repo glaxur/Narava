@@ -18,9 +18,58 @@ li{
 }
 
 .contentdiv{
-    background-color: #e0e0e0;
+    background-color: #343a40;
+    border: #282c34 solid 2px;
+    color: white;
 }
 
 a{
     color: #24A2B6;
+    text-align: center;
 }
+
+#allposts{
+    text-align: center;
+    border: solid 1px #343a40;
+    padding-bottom: 5%;
+}
+
+.mapbutton{
+    padding-left: 40%;
+    display: inline;
+}
+
+body{
+    background-image: url("allaboard!.jpg");
+    opacity: .1%;
+}
+
+.AP{
+    text-align: center;
+    font-family: "American Typewriter";
+}
+
+.allpostsuser{
+    color: #24a2b6;
+}
+
+.allpostscaption{
+    display: inline-block;
+    border: solid 1px #282c34;
+    width: 59%;
+}
+
+.rowpages{
+    padding-left: 2300%;
+}
+
+.narava-name{
+    color: #24a2b6;
+    padding-right: 2%;
+}
+
+hr{
+    color: #282c34;
+}
+
+

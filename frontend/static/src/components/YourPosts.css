@@ -8,3 +8,9 @@
     padding-right: 15%;
     display: inline-block;
 }
+
+#usersposts{
+    background-image: url("allaboardcopy.jpg");
+    border: solid 1px #343a40;
+    padding-bottom: 5%;
+}

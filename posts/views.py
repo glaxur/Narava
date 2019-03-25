@@ -13,9 +13,5 @@ class AllPostsListView(ListView):
     template_name = 'allposts.html'
 
 
-
-
-
-
-
-
+# class ClickedUserPostList(ListView):
+#     pass

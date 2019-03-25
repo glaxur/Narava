@@ -8,14 +8,14 @@ class YourPosts extends Component{
     let posts = this.props.posts.map(post => {
       return (
         <li key={post.id}>
-          <h6>{post.user}</h6>
+          <h6>@{post.user.username}</h6>
           <img src={post.nature_upload} alt="" width='500px' height='550px'/>
           <h4>{post.post_caption}</h4>
           <div id="editPostB">
             <button className="btn btn-outline-info my-2 my-sm-0" id="editPostButton" onClick={() => this.props.edit(post)}>Edit</button>
           </div>
           <div id='map'>
-            <a href="" className="btn btn-outline-info my-2 my-sm-0">See Location</a>
+            <a href={`/map/${post.id}/`} className="btn btn-outline-info my-2 my-sm-0">See Location</a>
           </div>
           <hr/>
         </li>
@@ -23,7 +23,7 @@ class YourPosts extends Component{
     });
 
     return(
-      <div>
+      <div id="usersposts">
         <h1>Your Posts</h1>
         <ul>
           {posts}
