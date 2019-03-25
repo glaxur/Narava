@@ -17,6 +17,7 @@ psycopg2 = "*"
 dj-database-url = "*"
 boto3 = "*"
 django-storages = "*"
+requests = "*"
 
 [requires]
 python_version = "3.7"

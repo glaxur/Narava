@@ -5,12 +5,25 @@
 }
 
 #editPostB{
-    padding-right: 15%;
+    padding-right: 11%;
     display: inline-block;
 }
 
 #usersposts{
-    background-image: url("allaboardcopy.jpg");
-    border: solid 1px #343a40;
+    background-color: #343a40;
     padding-bottom: 5%;
+}
+
+h6{
+    color: #24a2b6;
+}
+
+h4{
+    color: white;
+}
+
+h1{
+    font-family: "American Typewriter";
+    color: white;
+    padding-left: 4%;
 }

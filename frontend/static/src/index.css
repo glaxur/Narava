@@ -37,11 +37,14 @@ a{
 }
 
 .hi{
-    padding-left: 70%;
 }
 
 .NaravaTitle{
     color: #24a2b6;
     padding-right: 2%;
+}
+
+.searchbar{
+    padding-left: 50%;
 }
 

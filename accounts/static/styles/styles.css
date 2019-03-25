@@ -6,7 +6,7 @@ li{
 }
 
 .col-sm-10{
-    /*border: #282c34 solid 2px;*/
+    border: #282c34 solid 2px;
     margin-left: 20%;
     height: 100%;
     max-width: 60%;
@@ -19,7 +19,7 @@ li{
 
 .contentdiv{
     background-color: #343a40;
-    border: #282c34 solid 2px;
+    border: white solid 2px;
     color: white;
 }
 
@@ -30,7 +30,7 @@ a{
 
 #allposts{
     text-align: center;
-    border: solid 1px #343a40;
+    border: solid 1px #282c34;
     padding-bottom: 5%;
 }
 
@@ -40,7 +40,7 @@ a{
 }
 
 body{
-    background-image: url("allaboard!.jpg");
+    background-color: #343a40;
     opacity: .1%;
 }
 
@@ -55,12 +55,13 @@ body{
 
 .allpostscaption{
     display: inline-block;
-    border: solid 1px #282c34;
-    width: 59%;
+    border: solid 1px white;
+    width: 57%;
 }
 
 .rowpages{
-    padding-left: 2300%;
+    /*padding-left: 350%;*/
+    display: inline-block;
 }
 
 .narava-name{
@@ -71,5 +72,33 @@ body{
 hr{
     color: #282c34;
 }
+
+nav{
+    padding-bottom: 10%;
+    display: inline-block;
+}
+
+form{
+    padding-left: 50%;
+    display: inline-block;
+}
+
+.allpostsimages{
+    border: white solid 1px;
+}
+
+.allpostsa:hover{
+    background-color: #24a2b6;
+}
+
+.yourposta:hover{
+    background-color: #24a2b6;
+}
+
+.logouta:hover{
+    color: white;
+    display: inline-block;
+}
+
 
 

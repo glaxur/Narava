@@ -10,7 +10,9 @@ class YourPosts extends Component{
         <li key={post.id}>
           <h6>@{post.user.username}</h6>
           <img src={post.nature_upload} alt="" width='500px' height='550px'/>
-          <h4>{post.post_caption}</h4>
+          <div id="postcaption">
+            <h4>{post.post_caption}</h4>
+          </div>
           <div id="editPostB">
             <button className="btn btn-outline-info my-2 my-sm-0" id="editPostButton" onClick={() => this.props.edit(post)}>Edit</button>
           </div>

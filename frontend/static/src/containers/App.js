@@ -110,7 +110,6 @@ class App extends Component {
           <EditPost post={this.state.isEditing} update={this._update} delete={this._delete} cancel={this._cancel}/>) : (
           <div>
             <NatureForm addPost={this._addPost}/>
-            <hr/>
             <YourPosts posts={this.state.posts} edit={this._doEdit}/>
           </div>
         )}

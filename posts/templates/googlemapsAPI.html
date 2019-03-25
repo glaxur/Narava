@@ -1,17 +1,9 @@
-{#{% extends 'registration/base.html' %}#}
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
-    <meta charset="utf-8">
-      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <title>Image Location</title>
+{% extends 'registration/base.html' %}
+{% block title %}Image Location{% endblock %}
+{% block map %}
     <style>
       /* Always set the map height explicitly to define the size of the div
        * element that contains the map. */
-      #map {
-        height: 100%;
-      }
       /* Optional: Makes the sample page fill the window. */
       html, body {
         height: 100%;
@@ -54,12 +46,20 @@
           display: inline-block;
           padding: 5px;
       }
+
+        #map{
+            height: 100vh;
+        }
     </style>
-  </head>
-  <body>
-  {#{% block content %}#}
-    <div id="map"></div>
-  {#{% endblock content %}#}
+
+    <div class="container-fluid map-container">
+        <div class="row">
+            <div class="col">
+                <div id="map"></div>
+            </div>
+        </div>
+    </div>
+
     <script>
       function initMap() {
         var latlng = {lat: {{ object.point.x }}, lng: {{ object.point.y }}};
@@ -80,5 +80,4 @@
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDo1QqQKXqmM68fNbBP4dgsW3pwy3TngOs&callback=initMap">
     </script>
-  </body>
-</html>
+{% endblock map %}
