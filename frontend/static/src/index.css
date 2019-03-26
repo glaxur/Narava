@@ -36,15 +36,36 @@ a{
     color: #24A2B6;
 }
 
-.hi{
+.rowpages{
+    /*padding-left: 350%;*/
 }
 
 .NaravaTitle{
     color: #24a2b6;
     padding-right: 2%;
+    /*display: inline-block;*/
 }
 
-.searchbar{
-    padding-left: 50%;
+.nav-item{
+    /*display: inline-block;*/
 }
+
+nav{
+    padding-bottom: 10%;
+    display: inline-block;
+}
+.allpostsa:hover{
+    background-color: #24a2b6;
+}
+
+.yourposta:hover{
+    background-color: #24a2b6;
+}
+
+.logouta:hover{
+    color: white;
+    display: inline-block;
+}
+
+
 

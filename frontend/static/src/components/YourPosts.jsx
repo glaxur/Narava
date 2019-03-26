@@ -8,10 +8,12 @@ class YourPosts extends Component{
     let posts = this.props.posts.map(post => {
       return (
         <li key={post.id}>
-          <h6>@{post.user.username}</h6>
+          <div className="yourpostname">
+            <h6>@{post.user.username}</h6>
+          </div>
           <img src={post.nature_upload} alt="" width='500px' height='550px'/>
           <div id="postcaption">
-            <h4>{post.post_caption}</h4>
+            <h4 className="yourpostscaption">{post.post_caption}</h4>
           </div>
           <div id="editPostB">
             <button className="btn btn-outline-info my-2 my-sm-0" id="editPostButton" onClick={() => this.props.edit(post)}>Edit</button>

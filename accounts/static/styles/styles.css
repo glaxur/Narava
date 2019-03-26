@@ -30,7 +30,6 @@ a{
 
 #allposts{
     text-align: center;
-    border: solid 1px #282c34;
     padding-bottom: 5%;
 }
 
@@ -40,8 +39,8 @@ a{
 }
 
 body{
-    background-color: #343a40;
-    opacity: .1%;
+    background-image: url("thomas-kelley-64329-unsplash.jpg");
+    background-size: 100%;
 }
 
 .AP{
@@ -79,7 +78,7 @@ nav{
 }
 
 form{
-    padding-left: 50%;
+    padding-left: 40%;
     display: inline-block;
 }
 
@@ -98,6 +97,11 @@ form{
 .logouta:hover{
     color: white;
     display: inline-block;
+}
+
+img{
+    max-width: 550px;
+    max-height: 550px;
 }
 
 

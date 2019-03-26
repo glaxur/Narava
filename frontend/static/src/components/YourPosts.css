@@ -10,20 +10,48 @@
 }
 
 #usersposts{
-    background-color: #343a40;
+    /*background-color: #343a40;*/
+    background-image: url("thomas-kelley-64329-unsplash copy.jpg");
+    background-size: 100%;
     padding-bottom: 5%;
 }
 
 h6{
     color: #24a2b6;
+    display: inline-block;
+    background-color: #343a40;
+    width: 500px;
+    text-align: center;
+    border: black solid 1px;
 }
 
-h4{
+.yourpostscaption{
+    display: inline-block;
+    text-align: center;
     color: white;
+    background-color: #343a40;
+    width: 500px;
+    border-left: solid 1px black;
+    border-right: solid 1px black;
+    border-bottom: solid 1px black;
 }
 
 h1{
     font-family: "American Typewriter";
-    color: white;
+    color: #282c34;
     padding-left: 4%;
 }
+
+img{
+    border-left: solid 1px black;
+    border-right: solid 1px black;
+    border-top: black 1px solid;
+    max-height: 550px;
+    max-width: 500px;
+}
+
+.btn{
+    background-color: #343a40;
+    color: #24a2b6;
+}
+

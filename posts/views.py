@@ -5,6 +5,7 @@ import requests
 from django.contrib.gis.measure import D
 from django.contrib.gis.geos import Point
 
+
 class NatureLocationDetailView(DetailView):
     model = NatureLocation
     template_name = 'googlemapsAPI.html'
