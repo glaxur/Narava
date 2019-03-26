@@ -18,7 +18,6 @@ dj-database-url = "*"
 boto3 = "*"
 django-storages = "*"
 requests = "*"
-gdal = "*"
 
 [requires]
 python_version = "3.7"
