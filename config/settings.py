@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
     'rest_framework',
     'frontend',
     'posts',
@@ -93,6 +94,8 @@ if os.environ.get('DATABASE_URL'):
     DATABASES = {
        'default': dj_database_url.config(default=os.environ['DATABASE_URL']),
     }
+    DATABASES['default']['ENGINE'] = 'django.contrib.gis.db.backends.postgis'
+
 else:
 
     DATABASES = {
@@ -105,6 +108,7 @@ else:
                 'PORT': '5432',
         }
     }
+
 
 
 # Password validation
