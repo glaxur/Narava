@@ -51,7 +51,7 @@ class App extends Component {
       'post_caption': dataObj.post_caption
     }
 
-    fetch(`api/post/${this.state.isEditing.id}/update/`, {
+    fetch(`/api/post/${this.state.isEditing.id}/update/`, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json'
@@ -74,17 +74,12 @@ class App extends Component {
 
 
   _delete() {
-    fetch(`api/post/${this.state.isEditing.id}/delete/`, {
+    fetch(`/api/post/${this.state.isEditing.id}/delete/`, {
       method: 'DELETE',
     }).then(response => response.json())
       .then(json => {
         console.log('delete Success', JSON.stringify(json))
         console.log(json)
-
-
-
-
-
         // let afterDelete = this.state.posts
         // this.setState({posts: afterDelete})
       })
