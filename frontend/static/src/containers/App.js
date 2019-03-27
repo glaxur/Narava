@@ -80,6 +80,11 @@ class App extends Component {
       .then(json => {
         console.log('delete Success', JSON.stringify(json))
         console.log(json)
+
+
+
+
+
         // let afterDelete = this.state.posts
         // this.setState({posts: afterDelete})
       })
