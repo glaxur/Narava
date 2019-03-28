@@ -29,6 +29,8 @@
     color: #24a2b6;
     background-color: #343A40;
     border: #24a2b6 solid 1px;
+    max-width: 400px;
+    max-width: 450px;
 }
 
 #uploadForm{

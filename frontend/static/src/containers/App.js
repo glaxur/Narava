@@ -63,13 +63,17 @@ class App extends Component {
       console.log(json)
 
       console.log({'newData': newData})
-      // let updatedPost = this.state.posts
-      // updatedPost.map()
-      // this.setState({posts: updatedPost})
+
+      let posts = [...this.state.posts];
+      let index = posts.indexOf(this.state.isEditing);
+
+      posts[index].post_caption = dataObj.post_caption;
+      this.setState({posts});
+      this.setState({isEditing: false})
 
     })
     .catch(error => console.log('Error', error))
-    this.setState({isEditing: false})
+
   }
 
 
@@ -80,6 +84,7 @@ class App extends Component {
       .then(json => {
         console.log('delete Success', JSON.stringify(json))
         console.log(json)
+
         // let afterDelete = this.state.posts
         // this.setState({posts: afterDelete})
       })

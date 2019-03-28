@@ -20,7 +20,7 @@ h6{
     color: #24a2b6;
     display: inline-block;
     background-color: #343a40;
-    width: 500px;
+    max-width: 500px;
     text-align: center;
     border: black solid 1px;
 }
@@ -30,7 +30,7 @@ h6{
     text-align: center;
     color: white;
     background-color: #343a40;
-    width: 500px;
+    max-width: 500px;
     border-left: solid 1px black;
     border-right: solid 1px black;
     border-bottom: solid 1px black;

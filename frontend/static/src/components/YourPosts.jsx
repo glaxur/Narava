@@ -6,12 +6,13 @@ class YourPosts extends Component{
   render() {
     console.log('posts', this.props.posts)
     let posts = this.props.posts.map(post => {
+      console.log('here we are', post)
       return (
         <li key={post.id}>
           <div className="yourpostname">
             <h6>@{post.user.username}</h6>
           </div>
-          <img src={post.nature_upload} alt="" width='500px' height='550px'/>
+          <img src={post.nature_upload} alt=""/>
           <div id="postcaption">
             <h4 className="yourpostscaption">{post.post_caption}</h4>
           </div>

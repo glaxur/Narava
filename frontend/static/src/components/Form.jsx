@@ -46,7 +46,7 @@ class NatureForm extends Component{
                     <input ref={this.fileInput} id="fileItem" type="file" onChange={this.handleInput} name="image"/>
                 </div>
                 <div>
-                    <img id="imagePreview" src={this.state.preview} alt="" width='400px' height='450px'/>
+                    <img id="imagePreview" src={this.state.preview} alt=""/>
                 </div>
                 <div id="theCaption">
                     <input id="enterCaption" type="text" placeholder='Enter Caption' value={this.state.caption} name='caption' onChange={this.handleInput}/>

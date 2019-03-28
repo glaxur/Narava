@@ -42,8 +42,7 @@ class EditPost extends Component {
     console.log(this.props.post)
     return (
       <form id="uploadForm" onSubmit={e => {
-        e.preventDefault();
-      }}>
+        e.preventDefault();}}>
         <h1 id="editPostText">EDIT POST</h1>
         <hr/>
         <div>
