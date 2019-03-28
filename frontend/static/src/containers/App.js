@@ -4,7 +4,6 @@ import YourPosts from '../components/YourPosts';
 import EditPost from "../components/Edit";
 import './App.css';
 
-
 class App extends Component {
   constructor(props) {
     super(props)
@@ -45,12 +44,10 @@ class App extends Component {
       .catch(error => console.log('Error', error))
   }
 
-
   _update(dataObj) {
     let newData = {
       'post_caption': dataObj.post_caption
     }
-
     fetch(`/api/post/${this.state.isEditing.id}/update/`, {
       method: 'PATCH',
       headers: {
@@ -61,7 +58,6 @@ class App extends Component {
       .then(json => {
         console.log('Put Success', JSON.stringify(json))
         console.log(json)
-
         console.log({'newData': newData})
 
         let posts = [...this.state.posts];
@@ -69,13 +65,11 @@ class App extends Component {
 
         posts[index].post_caption = dataObj.post_caption;
         this.setState({posts, isEditing: false});
-        // this.setState({isEditing: false});
 
       })
       .catch(error => console.log('Error', error))
 
   }
-
 
   _delete(post) {
 
@@ -95,9 +89,7 @@ class App extends Component {
 
     })
       .catch(error => console.log('Error', error))
-
   }
-
 
   componentDidMount() {
     fetch(`/api/post/`, {
@@ -116,7 +108,6 @@ class App extends Component {
     console.log(this.state.isEditing)
     return (
       <div className="App">
-
         {this.state.isEditing ? (
           <EditPost post={this.state.isEditing} update={this._update} delete={this._delete} cancel={this._cancel}/>) : (
           <div>
@@ -128,6 +119,5 @@ class App extends Component {
     );
   }
 }
-
 export default App;
 
