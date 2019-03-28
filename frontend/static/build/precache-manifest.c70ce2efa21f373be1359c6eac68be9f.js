@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "6ffb69cdb614beadff4c",
-    "url": "/static/css/main.f80c9c96.chunk.css"
+    "revision": "9cada5b4bde4dd00c57c",
+    "url": "/static/css/main.aafe8be7.chunk.css"
   },
   {
-    "revision": "6ffb69cdb614beadff4c",
-    "url": "/static/js/main.0294d339.chunk.js"
+    "revision": "9cada5b4bde4dd00c57c",
+    "url": "/static/js/main.07a44cd8.chunk.js"
   },
   {
     "revision": "42ac5946195a7306e2a5",
@@ -20,7 +20,7 @@ self.__precacheManifest = [
     "url": "/static/media/thomas-kelley-64329-unsplash copy.cf7959e3.jpg"
   },
   {
-    "revision": "c083813b257b190eebcdfaadce09c9b7",
+    "revision": "1b7a849c4fe6c62dd9ba4490a2ecdf92",
     "url": "/index.html"
   }
 ];
