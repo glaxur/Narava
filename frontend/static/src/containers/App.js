@@ -58,38 +58,44 @@ class App extends Component {
       },
       body: JSON.stringify({newData})
     }).then(response => response.json())
-    .then(json => {
-      console.log('Put Success', JSON.stringify(json))
-      console.log(json)
+      .then(json => {
+        console.log('Put Success', JSON.stringify(json))
+        console.log(json)
 
-      console.log({'newData': newData})
+        console.log({'newData': newData})
 
-      let posts = [...this.state.posts];
-      let index = posts.indexOf(this.state.isEditing);
+        let posts = [...this.state.posts];
+        let index = posts.indexOf(this.state.isEditing);
 
-      posts[index].post_caption = dataObj.post_caption;
-      this.setState({posts});
-      this.setState({isEditing: false})
+        posts[index].post_caption = dataObj.post_caption;
+        this.setState({posts, isEditing: false});
+        // this.setState({isEditing: false});
 
-    })
-    .catch(error => console.log('Error', error))
+      })
+      .catch(error => console.log('Error', error))
 
   }
 
 
-  _delete() {
-    fetch(`/api/post/${this.state.isEditing.id}/delete/`, {
-      method: 'DELETE',
-    }).then(response => response.json())
-      .then(json => {
-        console.log('delete Success', JSON.stringify(json))
-        console.log(json)
+  _delete(post) {
 
-        // let afterDelete = this.state.posts
-        // this.setState({posts: afterDelete})
-      })
+    fetch(`/api/post/${post.id}/delete/`, {
+      method: 'DELETE',
+    }).then((response) => {
+      let posts = [...this.state.posts];
+      let index = posts.indexOf(post);
+
+      console.log('post', post);
+      console.log('posts', posts);
+      console.log('index', index);
+
+      posts.splice(index, 1);
+      console.log('posts now', posts);
+      this.setState({posts});
+
+    })
       .catch(error => console.log('Error', error))
-    this.setState({isEditing: false})
+
   }
 
 
@@ -115,7 +121,7 @@ class App extends Component {
           <EditPost post={this.state.isEditing} update={this._update} delete={this._delete} cancel={this._cancel}/>) : (
           <div>
             <NatureForm addPost={this._addPost}/>
-            <YourPosts posts={this.state.posts} edit={this._doEdit}/>
+            <YourPosts posts={this.state.posts} edit={this._doEdit} delete={this._delete}/>
           </div>
         )}
       </div>

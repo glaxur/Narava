@@ -55,9 +55,9 @@ class EditPost extends Component {
             id="submitButton" className="btn btn-outline-info my-2 my-sm-0" onClick={this.handleUpdate}
             value="submit me">Save
           </button>
-          <button
-            id="submitButton" className="btn btn-outline-info my-2 my-sm-0" onClick={this.handleDelete}>Delete
-          </button>
+          {/*<button*/}
+            {/*id="submitButton" className="btn btn-outline-info my-2 my-sm-0" onClick={this.handleDelete}>Delete*/}
+          {/*</button>*/}
 
         </div>
       </form>
