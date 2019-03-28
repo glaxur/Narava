@@ -48,3 +48,13 @@
     border: #24a2b6 solid 1px;
     color: #343A40;
 }
+
+@media only screen and (max-width: 350px){
+    #imagePreview{
+    color: #24a2b6;
+    background-color: #343A40;
+    border: #24a2b6 solid 1px;
+    max-width: 350px;
+    max-width: 400px;
+}
+}
