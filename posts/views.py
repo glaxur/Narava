@@ -23,7 +23,7 @@ class PostSearchView(ListView):
     def get_queryset(self):
         queryset = super().get_queryset()
         # get the search address from querystring
-        search = self.request.GET.get('search_box')
+        search = self.request.GET.get('search_box', '')
         print(search)
         # convert address to lat long using google api call
         response = requests.get('https://maps.googleapis.com/maps/api/geocode/json?address='+search+'&key=AIzaSyDo1QqQKXqmM68fNbBP4dgsW3pwy3TngOs')
@@ -31,7 +31,11 @@ class PostSearchView(ListView):
         print(data)
         # Use lat long in filter to find images in 50 miles
 
-        lat = data['results'][0]['geometry']['location']['lat']
-        lng = data['results'][0]['geometry']['location']['lng']
+        results = data['results']
+        if not results:
+            return None
+
+        lat = results[0]['geometry']['location']['lat']
+        lng = results[0]['geometry']['location']['lng']
 
         return queryset.filter(point__distance_lte=(Point(lat, lng), D(mi=50)))
